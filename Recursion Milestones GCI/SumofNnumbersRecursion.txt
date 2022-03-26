@@ -1,0 +1,17 @@
+QUESTION- Write a program to calculate the sum of numbers from 1 to n using recursion.
+PROGRAM
+#include <iostream>
+using namespace std;
+int getSum(int n){
+    //base case
+    if(n==0){
+        return 0;
+    }
+    int ans = n+getSum(n-1);
+    return ans;
+}
+int main() {
+    int n=5;
+    cout<<getSum(n);
+    return 0;
+}

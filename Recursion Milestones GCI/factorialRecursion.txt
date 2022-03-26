@@ -1,0 +1,20 @@
+QUESTION - Write a program to find the Factorial of a number using recursion
+PROGRAM
+
+#include <iostream>
+using namespace std;
+int fact(int n){
+    //base case
+    if(n==0){
+        return 1;
+    }
+     int smallProb=fact(n-1);
+     int bigProb=n*smallProb;
+     return bigProb;
+}
+int main() {
+    int n=5;
+    int ans=fact(n);
+    cout<<ans;
+    return 0;
+}

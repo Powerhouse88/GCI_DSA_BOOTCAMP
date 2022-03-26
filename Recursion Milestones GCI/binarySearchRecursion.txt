@@ -1,0 +1,38 @@
+QUESTION-Write a program for binary search using recursion.
+
+PROGRAM-
+
+#include<iostream>
+using namespace std;
+bool binarySearch(int *arr,int s, int e, int key){
+    //base case
+    //element not found
+
+    if(s>e){
+        return 0;
+    }
+
+    int mid = s+(e-s)/2;
+
+    //element found
+    if( arr[mid]==key){
+        return true;
+    }
+
+    if(arr[mid]<key){
+        binarySearch(arr,mid+1,e,key);
+    }
+    else
+    {
+        binarySearch(arr,s,mid-1,key);
+    }
+}
+int main(){
+    int arr[5]={2,4,6,8,10};
+    int size=5;
+    int key=6;
+
+    cout<<"Key is present or not "<<binarySearch(arr,0,4,key);
+    return 0;
+
+}

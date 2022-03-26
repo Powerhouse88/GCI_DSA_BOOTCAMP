@@ -1,0 +1,28 @@
+QUESTION-Write a program to check a number is a prime number or not using recursion.
+#include <iostream>
+using namespace std;
+bool checkPrime(int n,int i=2){
+    //base case
+    if(n%i == 0){
+        return false;
+    }
+    if(i*i>n){
+        return true;
+    }
+    if(n<=2){
+        return false;
+    }
+
+    return checkPrime(n,i+1);
+}
+
+int main() {
+	int n=17;
+	if(checkPrime(n)){
+	    cout<<"yes,Prime number";
+	}
+	else{
+	    cout<<"No,not Prime number";
+	} 
+	return 0;
+}
